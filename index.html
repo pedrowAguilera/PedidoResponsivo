@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido secreto</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(176deg, #3bc354 5.21%, #c0c00d 97.40%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        button {
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 7px;
+            border: black solid 3px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+        }
+
+        button:hover {
+            background: white;
+            box-shadow: 0 0 30px 5px white;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+        }
+
+        button:hover::before {
+            -webkit-animation: sh02 0.5s 0s linear;
+            -moz-animation: sh02 0.5s 0s linear;
+            animation: sh02 0.5s 0s linear;
+        }
+
+        button::before {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 86%;
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            opacity: 0;
+            background: #fff;
+            box-shadow: 0 0 50px 30px #fff;
+            -webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+        }
+
+        @keyframes sh02 {
+            from {
+                opacity: 0;
+                left: 0%;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                left: 100%;
+            }
+        }
+
+        button:active {
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: box-shadow 0.2s ease-in;
+            -moz-transition: box-shadow 0.2s ease-in;
+            transition: box-shadow 0.2s ease-in;
+        }
+
+
+        .btn1 {
+            background-color: white;
+            color: #160C28;
+            font: 300 40px 'Poppins', sans-serif;
+            padding: 10px;
+            border-radius: 15px;
+            transition: ease-in-out 0.4s;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .btn2 {
+            background-color: white;
+            color:#000411 ;
+            font: 300 40px 'Poppins', sans-serif;
+            padding: 10px;
+            border-radius: 15px;
+            transition: ease-in-out 0.4s;
+            cursor: pointer;
+            width: auto;
+        }
+
+
+        .tituloPrincipal {
+            font: 700 40px 'Poppins', sans-serif;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-top: 50px;
+            color: #000000;
+           
+        }
+
+        .botoes {
+            display: flex;
+            margin-top: 100px;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titulo">
+        <h1 class="tituloPrincipal">Da um presentinho pra mim tomar uma cachaça?</h1>
+    </div>
+    <div class="botoes">
+        <div class="botaoS">
+            <button class="btn1" onclick="sim()">PRESENTINHO!</button>
+        </div>
+        <div class="botaoN">
+            <button class="btn2" onclick="desvia(this)" onmouseover="desvia(this)">NÃO 😡</button>
+        </div>
+    </div>
+    <script>
+        function sim() {
+            location.href = "https://www.youtube.com/shorts/Yr-bAqtc5L8"
+        }
+
+        function desvia(btn) {
+            btn.style.position = 'absolute'
+            btn.style.bottom = posicao(10, 80);
+            btn.style.left = posicao(10, 80);
+        }
+
+        function posicao(min, max) {
+            return (Math.random() * (max - min + min)) + "%"
+        }
+
+    </script>
+</body>
+
+</html>
